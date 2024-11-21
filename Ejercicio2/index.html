@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h2 class="fn-insert-here"></h2>
+	<p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+  <p>No me elimines!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+	<div></div><div></div>
+	<div class="fn-insert-here"></div>
+  <div class="fn-insert-here"></div>
+  <script>
+    const body = document.querySelector("body");
+    let divVacio= document.createElement('div');
+    body.appendChild(divVacio);
+    //------------------------
+    let div1= document.createElement('div');
+    div1.textContent = "div1";
+    body.appendChild(div1);
+    //------------------------
+    let div2= document.createElement('div');
+    for (let i = 1; i < 7; i++) {
+        let p =document.createElement('p');
+        p.textContent='parrafo'+i;
+        div2.appendChild(p);
+        document.body.appendChild(div2);
+    }
+    //------------------------
+    let p = document.createElement('p');
+    p.textContent=('Soy dinámico!');
+    document.body.appendChild(p);
+    //------------------------
+    let h2 = document.querySelector('h2.fn-insert-here')
+    h2.textContent='Wubba Lubba dub dub';
+    //------------------------
+    const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter'];
+    let ul = document.createElement('ul');
+    for (let i = 0; i < apps.length; i++) {
+        let li = document.createElement('li');
+        li.textContent=apps[i];
+        document.body.appendChild(li);
+    }
+    //------------------------
+    let pBorrar = document.querySelectorAll('p.fn-remove-me');
+    for (let i = 0; i < pBorrar.length; i++) {
+        pBorrar[i].remove();
+    }
+    //------------------------
+    let divs = document.querySelectorAll('div');
+    let parrafo8 = document.createElement('p');
+    parrafo8.textContent = 'Voy en medio!';
+    divs[0].parentNode.insertBefore(parrafo8, divs[1]);
+    //------------------------
+    let divDentro = document.querySelectorAll('div.fn-insert-here');
+    for (let i = 0; i < divDentro.length; i++) {
+        divDentro[i].textContent='Voy dentro!';
+        
+    }
+  </script>
+</body>
+</html>
