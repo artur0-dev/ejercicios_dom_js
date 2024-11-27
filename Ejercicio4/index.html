@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<input class="click" type="text"/>
+	<input class="focus" type="text"/>
+	<input class="value" type="text"/>
+    <script>
+        const albums = [
+            "De Mysteriis Dom Sathanas",
+            "Reign of Blood",
+            "Ride the Lightning",
+            "Painkiller",
+            "Iron Fist",
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let boton = document.createElement('button');
+            boton.id = 'btnToClick';
+            boton.textContent = 'Pulsar';
+            document.body.appendChild(boton);
+            boton.addEventListener('click', function(event) {
+                console.log(event.type);
+                console.log(event.target);
+                console.log(event.clientX);
+                console.log(event.clientY);
+                console.log(event.shiftKey);
+                console.log(event.ctrlKey);
+                console.log('--------------------------')
+            });
+
+            //---------------------
+            let inputFocus = document.querySelector('.focus');
+            inputFocus.addEventListener('focus', function(event) {
+                console.log('Focus'+event.target.value);
+            });
+
+            //---------------------
+            let inputValue = document.querySelector('.value');
+            inputValue.addEventListener('input', function(event) {
+                console.log('Salida Input '+event.target.value);
+            });
+
+            //---------------------
+            let ul = document.createElement('ul');
+            for (let i = 0; i < albums.length; i++) {
+            let li = document.createElement('li');
+            li.textContent=albums[i];
+            ul.appendChild(li);
+            
+            }
+            document.body.appendChild(ul);
+        });
+
+        
+        
+    </script>
+</body>
+</html>

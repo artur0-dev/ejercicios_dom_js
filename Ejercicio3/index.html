@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="exercise-1.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    <p class="fn-remove-me">Bye bye</p>
-		<div data-function="printHere"></div>
-    <script>
-        
-    </script>
-</body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+      <p class="fn-remove-me">Bye bye</p>
+      <div data-function="printHere"></div>
+      <script>
+          const countries1 = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela'];
+          let ul=document.createElement('ul');
+          for (let i = 0; i < countries1.length; i++) {
+            let li = document.createElement('li');
+            li.textContent=countries1[i];
+            ul.appendChild(li);
+          }
+         
+          
+          document.body.appendChild(ul);
+          //--------------------
+          let pBorrar = document.querySelector('.fn-remove-me')
+          pBorrar.remove();
+          //--------------------
+          const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola'];
+          let div = document.querySelector('div[data-function="printHere"]');
+          let ul2=document.createElement('ul');
+          for (let i = 0; i < cars.length; i++) {
+            let li2=document.createElement('li');
+            li2.textContent= cars[i]
+            ul2.appendChild(li2);
+            
+          }
+          div.appendChild(ul2);
+          //--------------------
+          const countries2 = [
+          {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=1'}, 
+          {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=2'},
+          {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=3'},
+          {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4'},
+          {title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
+          ];
+          
+          
+          
+          for (let i = 0; i < countries2.length; i++) {
+            let div2 = document.createElement('div');
+
+            let titulo=document.createElement('h4');
+            titulo.textContent=countries2[i].title;
+
+            let imagen = document.createElement('img');
+            imagen.src=countries2[i].imgUrl;
+
+            div2.appendChild(titulo);
+            div2.appendChild(imagen);
+            document.body.appendChild(div2);
+          }
+          
+      </script>
+  </body>
 </html>
